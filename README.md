@@ -19,9 +19,11 @@ The common features in implementation of the three are:
  After this, an infinite loop runs where the functions of read and write can be executed. The loop gets terminated when the user types ‘exit’.
 
  Read
+
 The user provides the memory address (binary) they want to read. If it is present in cache, its contents are printed, otherwise ‘cache miss’ is printed.
 
  Write
+
 The user provided block address (binary) and a block of memory (using a single address here would be absurd, since the cache functions by loading blocks). The data
 gets written into data array as per the scheme of organization, and tag gets written
 into tag array.
