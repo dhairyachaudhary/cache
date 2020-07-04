@@ -1,4 +1,4 @@
-# cache Simulator
+# Cache Simulator
 
 Cache is a fast and small memory used by systems to run efficiently. When some data is needed, we search the cache (may be multi-level) before checking main memory, which is
 relatively large and slow.
