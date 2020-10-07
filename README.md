@@ -36,10 +36,10 @@ Both the tag and data arrays are initialized as empty lists and are filled dynam
 
 Address is divided into tag+offset
 
-READ FUNCTION
+### READ FUNCTION
 We calculate the tag for the address of an element and check if it is present in the tag array. If it is not, we print ‘cache miss’. If it is, we access that index of the data array, and print the required element from the block using the offset. This is highly power consuming since for each block, we need to check all entries.
 
-WRITE FUNCTION
+### WRITE FUNCTION
 We enter the data we received from user into tag array and data array. If that tag already exists in tag array, we remove the old element and add the new one. If the cache is full, we remove the oldest element that was added and add the new one. This is managed using a queue like implementation using inbuilt pop and insert functions of python lists.
 
 ## Direct Mapping
@@ -49,10 +49,10 @@ Tag and data arrays are initialized to be full of -1s (this denotes a garbage va
 
 Address is divided into tag+index+offset.
 
-READ FUNCTION
+### READ FUNCTION
 We calculate the tag and the offset. Then we calculate where the element will be mapped to and access that cache location. If the tag does not match we print ‘cache miss’. If it matches, we access data array and print required data from the block using offset calculated.
 
-WRITE FUNCTION
+### WRITE FUNCTION
 The data received from user is entered into the arrays using simple replacement operations in this case
 
 ## Set associative
@@ -62,8 +62,8 @@ I have organized the cache as lists within lists. Both tag and data arrays were 
 
 Address is divided into tag+set index+block offset
 
-READ FUNCTION
+### READ FUNCTION
 We determine the set to which the tag belongs. If the tag is not present in the set, we print ‘cache miss’. If it present in the set, we print the data associated with the address using the offset.
 
-WRITE FUNCTION
+### WRITE FUNCTION
 We determine the set to which a block gets mapped. The tag array and data array are rigid, but the lists inside them present as sets follow FIFO policy. If the tag is already present in the set, we remove it and insert the tag into tag array and new data into data array. If the set is full, we pop the last element (the one that was added first).
