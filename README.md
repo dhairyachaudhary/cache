@@ -12,17 +12,17 @@ A cache can be organized in numerous ways, the ones shown here are:
 
 The common features in implementation of the three are:
 
- The program starts by taking the block size (B) and number of cache lines (CL) as input. In case of set associative mapping, it also takes associativity or the number of blocks in any set (N) as input. 
+- The program starts by taking the block size (B) and number of cache lines (CL) as input. In case of set associative mapping, it also takes associativity or the number of blocks in any set (N) as input. 
 
- In all of these I maintain a tag array and a data array (as python lists), though these are initialized and modified differently.
+- In all of these I maintain a tag array and a data array (as python lists), though these are initialized and modified differently.
 
- After this, an infinite loop runs where the functions of read and write can be executed. The loop gets terminated when the user types ‘exit’.
+- After this, an infinite loop runs where the functions of read and write can be executed. The loop gets terminated when the user types ‘exit’.
 
- Read
+- Read
 
 The user provides the memory address (binary) they want to read. If it is present in cache, its contents are printed, otherwise ‘cache miss’ is printed.
 
- Write
+- Write
 
 The user provided block address (binary) and a block of memory (using a single address here would be absurd, since the cache functions by loading blocks). The data
 gets written into data array as per the scheme of organization, and tag gets written
