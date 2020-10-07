@@ -29,7 +29,7 @@ gets written into data array as per the scheme of organization, and tag gets wri
 into tag array.
 
 
-# Fully Associative
+## Fully Associative
 This is the most flexible scheme of organization. In this scheme of organization, FIFO orientation is used for storing the blocks. Any block can be stored anywhere in the cache.
 
 Both the tag and data arrays are initialized as empty lists and are filled dynamically when input is received.
@@ -42,7 +42,7 @@ We calculate the tag for the address of an element and check if it is present in
 WRITE FUNCTION
 We enter the data we received from user into tag array and data array. If that tag already exists in tag array, we remove the old element and add the new one. If the cache is full, we remove the oldest element that was added and add the new one. This is managed using a queue like implementation using inbuilt pop and insert functions of python lists.
 
-# Direct Mapping
+## Direct Mapping
 Due to the logic associated with each cell, associatively mapped caches tend to be costly. A directly mapped cache reduces the number of entries being checked for one block. This is done by mapping each block to a location in the cache (using the block address).
 
 Tag and data arrays are initialized to be full of -1s (this denotes a garbage value that was initially stored in cache), since we use replacement operations.
@@ -55,7 +55,7 @@ We calculate the tag and the offset. Then we calculate where the element will be
 WRITE FUNCTION
 The data received from user is entered into the arrays using simple replacement operations in this case
 
-# Set associative
+## Set associative
 Fully associative cache is very flexible and has a high-hit rate, but it consumes high power and the implementation is inefficient. Direct mapping uses less power and works faster, but the hit-rate is low. Hence, we combine aspects of both in the set associative cache. The cache is divided into sets which contain blocks, Address is used to determine which block goes to which set. Due to this we need to search less entries but maintain flexibility, efficiency and save power.
 
 I have organized the cache as lists within lists. Both tag and data arrays were initialized as lists containing as many empty lists as there are sets in the cache.
